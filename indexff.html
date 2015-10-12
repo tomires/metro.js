@@ -1,0 +1,24 @@
+<html ng-app="metro">
+<head>
+  <meta charset='utf-8'>
+  <meta author="Tomires">
+  <title>Graph City Metro</title>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="src/app.js"></script>
+  <script type="text/javascript" src="src/dijkstra.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="DijkstraController as dijkstra">
+  <embed id="svg" src="metro.svg" height="80%" type="image/svg+xml" />
+  <div id="settings">
+  <h1>Find a route</h1>
+  from <input class="num" tabindex="1" onchange="document.getElementById('svg').src = 'metro.svg'" ng-change="dijkstra.go(dijkstra.source,dijkstra.target)" ng-model-options="{ debounce: 500 }" type="number" min="0" max="39" ng-model="dijkstra.source"></input>
+  to <input class="num" tabindex="2" onchange="document.getElementById('svg').src = 'metro.svg'" ng-change="dijkstra.go(dijkstra.source,dijkstra.target)" ng-model-options="{ debounce: 500 }" type="number" min="0" max="39" ng-model="dijkstra.target"></input>
+  <div>
+    Distance is {{dijkstra.distance}}
+    <input type="button" onclick="document.getElementById('svg').src = 'metro.svg'" value="Clear"></input>
+  </div>
+  </div>
+</body>
+</html>

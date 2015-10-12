@@ -1,0 +1,41 @@
+@font-face{
+	font-family: 'Franklin Gothic Demi';
+	src: url('fonts/FranklinGothic-Demi-webfont.eot');
+	src: url('fonts/FranklinGothic-Demi-webfont.eot?#iefix') format('embedded-opentype'),
+	     url('fonts/FranklinGothic-Demi-webfont.woff') format('woff'),
+	     url('fonts/FranklinGothic-Demi-webfont.ttf') format('truetype'),
+	     url('fonts/FranklinGothic-Demi-webfont.svg#webfont') format('svg');
+}
+
+body{
+  text-align: center;
+  font-family: 'Franklin Gothic Demi';
+}
+
+#svg{
+  padding: 1em;
+}
+
+#settings{
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  width: 100%;
+}
+
+#settings h1{
+  display: inline;
+  padding: 0.5em;
+  padding-left: 0;
+}
+
+#settings .num{
+  width: 3em;
+  border: 0;
+  color: orange;
+  padding: 0.5em;
+  font-size: 1.5em;
+  font-family: 'Franklin Gothic Demi';
+}

@@ -1,0 +1,26 @@
+<html ng-app="metro">
+<head>
+  <meta charset='utf-8'>
+  <meta author="Tomires">
+  <title>Graph City Metro</title>
+  <script type="text/javascript" src="angular.min.js"></script>
+  <script type="text/javascript" src="angular-sanitize.min.js"></script>
+  <script type="text/javascript" src="src/app.js"></script>
+  <script type="text/javascript" src="src/dijkstra.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body ng-controller="DijkstraController as dijkstra">
+  <embed id="svg" src="metro.svg" height="80%" type="image/svg+xml" />
+  <div id="settings">
+  <h1>Find a route</h1>
+  from <input class="num" tabindex="1" type="number" min="0" max="39" ng-model="dijkstra.source"></input>
+  to <input class="num" tabindex="2" type="number" min="0" max="39" ng-model="dijkstra.target"></input>
+  <input ng-click="dijkstra.go(dijkstra.source,dijkstra.target)" value="Submit" type="button"></input>
+  <div>
+    Distance is {{dijkstra.distance}}
+    <input onclick="location.reload()" value="Refresh" type="button"></input>
+  </div>
+  <p>To keep your sanity, please consider using <a href="indexff.html">this version</a> under Firefox.</p>
+  </div>
+</body>
+</html>
